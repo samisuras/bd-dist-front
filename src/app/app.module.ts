@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { EstudianteComponent } from './components/usuarios/estudiante/estudiante.component';
-import { MaestroComponent } from './components/usuarios/estudiante/maestro/maestro.component';
+import { MaestroComponent } from './components/usuarios/maestro/maestro.component';
 import { LaboratoristaComponent } from './components/usuarios/laboratorista/laboratorista.component';
 
 @NgModule({

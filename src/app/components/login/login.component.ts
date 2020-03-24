@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     //Procesamiento de la data enviar y checar
     console.log(signInData);
     this.loginService.logIn(signInData).subscribe(
-      (res) =>{
+      (res:any) =>{
         console.log(res)
         sessionStorage.setItem('usuario',res.usuario);
         sessionStorage.setItem('rol',res.rol);

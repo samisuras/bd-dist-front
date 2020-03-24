@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSharingService } from "../../services/data-sharing.service";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  rol:string = "maestro";
+  rol: string;
 
-  constructor() { }
+  constructor(private dataSharingService:DataSharingService) { 
+    //escuchamos los cambios
+    this.dataSharingService.isUserLoggedIn.subscribe( value => {
+      this.rol = sessionStorage.getItem("rol");
+    });
+  }
 
   ngOnInit() {
   }

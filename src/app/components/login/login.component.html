@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="wrapper fadeInDown mt-3">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="assets/images/uaa_logo2.png" id="icon" alt="User Icon" height="300vh" />
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="signInForm" (ngSubmit)="onSubmit(signInForm.value)">
+        <input type="text" id="login" class="fadeIn second" name="id" placeholder="id" formControlName="id">
+        <input 
+        type="password" id="password" class="fadeIn third" name="login" placeholder="contraseña" formControlName="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+      </div>
+  
+    </div>
+  </div>

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     this.loginService.logIn(signInData).subscribe(
       (res:any) =>{
         console.log(res)
-        sessionStorage.setItem('usuario',res.usuario);
+        sessionStorage.setItem('id',res.usuario.idusuario);
         sessionStorage.setItem('rol',res.rol);
         //emitimos evento de logueo
         this.dataSharingService.isUserLoggedIn.next(true);

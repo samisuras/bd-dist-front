@@ -6,35 +6,27 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <div [ngSwitch]="rol">
-          <div *ngSwitchCase="'estudiante'">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/login" routerLinkActive="active">
-                Cosas de estudiante
-              </a>
-            </li>
-          </div>
-          <div *ngSwitchCase="'profesor'">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/" routerLinkActive="active">
-                Cosas de maestro
-              </a>
-            </li>
-          </div>
-          <div *ngSwitchCase="'laboratorista'">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/" routerLinkActive="active">
-                Cosas de laboratorista
-              </a>
-            </li>
-          </div>
-          <div *ngSwitchDefault>
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
-            </li>
-          </div>
-        </div>     
+      <ul class="navbar-nav ml-auto" [ngSwitch]="rol">
+        <li *ngSwitchCase="'estudiante'" class="nav-item active">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">
+            Cosas de estudiante
+          </a>
+        </li>
+        <span *ngSwitchCase="'profesor'">
+          <li  class="nav-item active pr-4">
+            <a class="nav-link " routerLink="/practica" routerLinkActive="active">
+              Subir práctica
+            </a>
+          </li>
+        </span>
+        <li *ngSwitchCase="'laboratorista'" class="nav-item active">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">
+            Cosas de laboratorista
+          </a>
+        </li>
+        <li *ngSwitchDefault class="nav-item active">
+          <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
+        </li>
       </ul>
     </div>
   </nav>

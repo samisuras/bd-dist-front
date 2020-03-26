@@ -1,0 +1,42 @@
+<div class="container bg-dark text-light mt-5 pt-3 pb-3">
+    <div align="center">
+        <h1>Subir una practica</h1>
+    </div>
+    <form>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="fecha">Fecha de entrega</label>
+                <input type="date" class="form-control" id="fecha">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="hora">Hora de entrega</label>
+                <input type="time" class="form-control" id="hora">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Materia </label>
+                <input list="materia" value="" class="col-sm-12 custom-select ">
+                <datalist id="materia" >
+                    <option *ngFor="let materia of materias" [value]="materia.nombre">
+                        {{materia.nombre}} 
+                    </option>
+                </datalist>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Grupo </label>
+                <input list="grupo" value="" class="col-sm-12 custom-select ">
+                <datalist id="grupo">
+                    <option value="ISO-8859-1">ISO-8859-1</option>
+                    <option value="cp1252">ANSI</option>
+                    <option value="utf8">UTF-8</option>
+                </datalist>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="archivo">Archivo</label>
+                <input type="file" class="form-control" id="archivo">
+            </div>
+            <div class="col-sm-12" align="center">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </div>
+      </form>
+</div>

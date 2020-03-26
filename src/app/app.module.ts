@@ -11,6 +11,7 @@ import { EstudianteComponent } from './components/usuarios/estudiante/estudiante
 import { MaestroComponent } from './components/usuarios/maestro/maestro.component';
 import { LaboratoristaComponent } from './components/usuarios/laboratorista/laboratorista.component';
 import { HomeComponent } from './components/home/home.component';
+import { PracticaComponent } from './components/usuarios/maestro/practica/practica.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     EstudianteComponent,
     MaestroComponent,
     LaboratoristaComponent,
-    HomeComponent
+    HomeComponent,
+    PracticaComponent
   ],
   imports: [
     BrowserModule,

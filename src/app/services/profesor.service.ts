@@ -14,4 +14,9 @@ export class ProfesorService {
     let urlMaterias = this.url + "/materias/" + id
     return this.httpClient.get(urlMaterias)
   }
+
+  public getGrupos(idusuario:string,idmateria:string){
+    let urlGrupos = this.url + '/grupos/' + idusuario + '/' + idmateria
+    return this.httpClient.get(urlGrupos)
+  }
 }

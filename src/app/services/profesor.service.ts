@@ -25,4 +25,9 @@ export class ProfesorService {
     console.log(formData.get('file'))
     return this.httpClient.post(this.url + '/practica/crear',formData)
   }
+
+  public getPracticas(json){
+    let urlPracticas = this.url+'/practicas/'+json.idprofesor+'/'+json.idmateria+'/'+json.idgrupo
+    return this.httpClient.get(urlPracticas)
+  }
 }

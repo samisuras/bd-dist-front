@@ -37,7 +37,8 @@ export class PracticaComponent implements OnInit {
       fecha: '',
       hora: '',
       materia: '',
-      grupo: ''
+      grupo: '',
+      nombre: ''
     })
   }
 

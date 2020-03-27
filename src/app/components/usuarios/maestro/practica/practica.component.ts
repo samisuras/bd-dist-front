@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ProfesorService } from "../../../../services/profesor.service";
 import { FormBuilder } from "@angular/forms";
 
@@ -30,14 +30,14 @@ export class PracticaComponent implements OnInit {
   grupos:any;
   idmateria:string;
   practicaForm;
+  fileToUpload: File = null;
 
-  constructor(private profesorService:ProfesorService,private formBuilder:FormBuilder) { 
+  constructor(private profesorService:ProfesorService,private formBuilder:FormBuilder,private el:ElementRef) { 
     this.practicaForm = this.formBuilder.group({
       fecha: '',
       hora: '',
       materia: '',
-      grupo: '',
-      archivo: ''
+      grupo: ''
     })
   }
 
@@ -71,8 +71,27 @@ export class PracticaComponent implements OnInit {
     )
   }
 
-  onSubmit(formData){
-    console.log(formData)
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
 
+  onSubmit(formData){
+    let inputEl: HTMLInputElement =  this.el.nativeElement.querySelector('#archivo');
+    let fileCount: number = inputEl.files.length;
+    let jsonData = new FormData();
+    if (fileCount > 0) { // a file was selected
+        for (let i = 0; i < fileCount; i++) {
+          jsonData.append('file', inputEl.files.item(i));
+        }
+        formData.idprofesor = sessionStorage.getItem("id")
+        formData.nombreArchivo = inputEl.files.item(0).name
+        let stringJSON:string = JSON.stringify(formData);
+        jsonData.append('form',stringJSON)
+        this.profesorService.crearPractica(jsonData).subscribe(
+          (res) =>{
+            console.log(res)
+          }
+        )
+    }
   }
 }

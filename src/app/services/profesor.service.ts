@@ -19,4 +19,10 @@ export class ProfesorService {
     let urlGrupos = this.url + '/grupos/' + idusuario + '/' + idmateria
     return this.httpClient.get(urlGrupos)
   }
+
+  public crearPractica(formData:FormData){
+    console.log(formData)
+    console.log(formData.get('file'))
+    return this.httpClient.post(this.url + '/practica/crear',formData)
+  }
 }

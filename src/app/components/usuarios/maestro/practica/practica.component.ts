@@ -85,11 +85,18 @@ export class PracticaComponent implements OnInit {
         }
         formData.idprofesor = sessionStorage.getItem("id")
         formData.nombreArchivo = inputEl.files.item(0).name
+        let materia = this.materias.find((materia)=> formData.materia == materia.nombre);
+        formData.idmateria = materia.idmateria
+        let grupo = this.grupos.find((grupo)=> formData.grupo == grupo.nombre);
+        formData.idgrupo = grupo.idgrupo
         let stringJSON:string = JSON.stringify(formData);
         jsonData.append('form',stringJSON)
         this.profesorService.crearPractica(jsonData).subscribe(
           (res) =>{
             console.log(res)
+          },
+          (err) => {
+            console.log(err)
           }
         )
     }

@@ -12,6 +12,7 @@ import { MaestroComponent } from './components/usuarios/maestro/maestro.componen
 import { LaboratoristaComponent } from './components/usuarios/laboratorista/laboratorista.component';
 import { HomeComponent } from './components/home/home.component';
 import { PracticaComponent } from './components/usuarios/maestro/practica/practica.component';
+import { VerPracticasComponent } from './components/usuarios/maestro/ver-practicas/ver-practicas.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PracticaComponent } from './components/usuarios/maestro/practica/practi
     MaestroComponent,
     LaboratoristaComponent,
     HomeComponent,
-    PracticaComponent
+    PracticaComponent,
+    VerPracticasComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,8 @@ import { LaboratoristaComponent } from './components/usuarios/laboratorista/labo
 import { HomeComponent } from './components/home/home.component';
 import { PracticaComponent } from './components/usuarios/maestro/practica/practica.component';
 import { VerPracticasComponent } from './components/usuarios/maestro/ver-practicas/ver-practicas.component';
+import { VerPracticaInidividualComponent } from './components/usuarios/maestro/ver-practicas/ver-practica-inidividual/ver-practica-inidividual.component';
+import { RefreshcomponentComponent } from './components/refreshcomponent/refreshcomponent.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { VerPracticasComponent } from './components/usuarios/maestro/ver-practic
     LaboratoristaComponent,
     HomeComponent,
     PracticaComponent,
-    VerPracticasComponent
+    VerPracticasComponent,
+    VerPracticaInidividualComponent,
+    RefreshcomponentComponent
   ],
   imports: [
     BrowserModule,

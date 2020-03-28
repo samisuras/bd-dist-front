@@ -1,0 +1,58 @@
+<div class="container mt-5">
+    <table class="table table-hover" align="center">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nombre Del Alumno</th>
+            <th scope="col">Calificacion</th>
+            <th scope="col">Notas</th>
+            <th scope="col">Archivo de Practica</th>
+            <th scope="col">Calificar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let practica of practicas; trackBy: trackByMethod">
+            <th scope="row">{{practica.nombre_alumno}}</th>
+            <td>{{(practica.calificacion !== null) ? practica.calificacion : "No Revisado"}}</td>
+            <td>{{(practica.notas !== null) ? practica.notas : "Sin notas"}}</td>
+            <td>{{(practica.archivo !== null) ? practica.archivo : "Sin Archivo"}}</td>
+            <td>
+                <button 
+                    class="btn pl-3 text-success fa-2x fas fa-clipboard-check"
+                    data-toggle="modal" data-target="#exampleModalCenter">
+                </button>
+            </td>
+             <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{practica.nombre_alumno}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div>
+                        <!--Form para Calificacion y notas -->
+                        <form [formGroup]="calificarForm" (ngSubmit)="onSubmit(calificarForm,practica.nombre_alumno)">
+                            <div class="form-group col-md-12">
+                                <label for="calificacion">Calificación: </label>
+                                <input type="number" min="0" max="10" value="{{practica.calificacion}}" class="form-control" id="calificacion" formControlName="calificacion" required>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="notas">Notas: </label>
+                                <input type="text" class="form-control" id="notas" value="{{practica.notas}}" formControlName="notas">
+                            </div>                   
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" id="closemodal" data-dismiss="modal">Close</button>
+                                <button type="button" type="submit"  class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+        </tr>
+        </tbody>
+    </table>
+</div>

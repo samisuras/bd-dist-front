@@ -4,12 +4,14 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from "./components/home/home.component";
 import { PracticaComponent } from './components/usuarios/maestro/practica/practica.component';
 import { VerPracticasComponent } from "./components/usuarios/maestro/ver-practicas/ver-practicas.component";
+import { VerPracticaInidividualComponent } from "./components/usuarios/maestro/ver-practicas/ver-practica-inidividual/ver-practica-inidividual.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'crearPracticas', component: PracticaComponent },
-  { path: 'verPracticas', component: VerPracticasComponent }
+  { path: 'verPracticas', component: VerPracticasComponent },
+  { path:'verPracticaInidividual/:id', component: VerPracticaInidividualComponent }
 ];
 
 @NgModule({

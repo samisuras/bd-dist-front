@@ -28,8 +28,8 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">Nombre</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Hora</th>
+            <th scope="col">Fecha De Entrega</th>
+            <th scope="col">Hora De Entrega</th>
             <th scope="col">Archivo</th>
             <th scope="col">Ver Practica</th>
         </tr>
@@ -40,7 +40,9 @@
             <td>{{practica.fecha}}</td>
             <td>{{practica.hora}}</td>
             <td>{{practica.archivo}}</td>
-            <td align="center"><i class="fas fa-plus-circle text-warning fa-2x"></i></td>
+            <td align="center">
+                <a class="fas fa-plus-circle text-warning fa-2x" [routerLink]="['/verPracticaInidividual', practica.idpractica]"></a>
+            </td>
         </tr>
         </tbody>
     </table>

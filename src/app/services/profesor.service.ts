@@ -30,4 +30,14 @@ export class ProfesorService {
     let urlPracticas = this.url+'/practicas/'+json.idprofesor+'/'+json.idmateria+'/'+json.idgrupo
     return this.httpClient.get(urlPracticas)
   }
+
+  public getPracticasAlumnos(idpractica){
+    let urlPracticasAlumnos = this.url + '/practicasDeAlumnos/'+idpractica;
+    return this.httpClient.get(urlPracticasAlumnos)
+  }
+
+  public calificarPractica(practica){
+    let urlCalificar = this.url + '/calificarPractica';
+    return this.httpClient.post(urlCalificar,practica)
+  }
 }

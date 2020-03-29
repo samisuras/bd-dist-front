@@ -40,4 +40,9 @@ export class ProfesorService {
     let urlCalificar = this.url + '/calificarPractica';
     return this.httpClient.post(urlCalificar,practica)
   }
+
+  public crearExamen(examen){
+    let urlCrearExamen = this.url + '/crearExamen';
+    return this.httpClient.post(urlCrearExamen,examen)
+  }
 }

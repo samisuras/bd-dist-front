@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
-import { ProfesorService } from "../../../../services/profesor.service";
+import { ProfesorService } from "../../../../../services/profesor.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-crear-examen',
@@ -15,7 +16,7 @@ export class CrearExamenComponent implements OnInit {
   grupos:any;
   idmateria
 
-  constructor(private formBuilder:FormBuilder,private profesorService:ProfesorService) {
+  constructor(private formBuilder:FormBuilder,private profesorService:ProfesorService,private router:Router) {
     this.examenForm = formBuilder.group({
       nombre: '',
       fecha: '',
@@ -42,7 +43,8 @@ export class CrearExamenComponent implements OnInit {
     console.log(formData)
     this.profesorService.crearExamen(formData).subscribe(
       (res:any)=> {
-        console.log(res.status)
+        console.log(res.idexamen)
+        this.router.navigate(['/crearPreguntas'],{ queryParams: {idexamen: res.idexamen,nombre: formData.nombre}})
       },
       (error) => console.log(error)
     )

@@ -1,0 +1,153 @@
+<div class="container-fluid bg-light text-dark mb-3 pt-4 pb-4 pl-5 pr-5">
+    <div align="center">
+        <h1>Examen: {{nombreExamen}}</h1>
+    </div>
+    <div class="row">
+        <form class="col-md-8" [formGroup]="preguntaForm" (ngSubmit)="onSubmit(preguntaForm.value)" *ngIf="!ModoEditar">
+            <div class="row">
+                <div class="form-group col-md-12 redondear-bordes bg-dark pt-2 pb-3">
+                    <label for="pregunta" class="text-light">Pregunta: </label>
+                    <div class="d-inline-block"></div>
+                    <input type="text" class="form-control" id="pregunta" formControlName="pregunta" required>
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-warning pt-2 pb-3">
+                    <label for="opcion1" class="text-light">Opcion 1: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion1" value="opcion1">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion1" required>
+                    </div>    
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-danger pt-2 pb-3">
+                    <label for="opcion2" class="text-light">Opcion 2: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion2" value="opcion2">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion2" required>
+                    </div>  
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-success pt-2 pb-3">
+                    <label for="opcion3" class="text-light">Opcion 3: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion3" value="opcion3">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion3" required>
+                    </div>  
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-primary pt-2 pb-3">
+                    <label for="opcion4" class="text-light">Opcion 4: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion4" value="opcion4">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion4" required>
+                    </div>  
+                </div>
+                <div class="col-sm-12" align="center">
+                    <button type="submit" class="btn btn-secondary btn-lg" *ngIf="!ModoEditar">Añadir Pregunta</button>
+                    <button type="button" class="btn btn-success btn-lg" *ngIf="ModoEditar">Guardar cambios</button>
+                </div>
+            </div>
+        </form>
+        <form class="col-md-8" [formGroup]="preguntaForm" (ngSubmit)="guardarCambios(preguntaForm.value)" *ngIf="ModoEditar">
+            <div class="row">
+                <div class="form-group col-md-12 redondear-bordes bg-dark pt-2 pb-3">
+                    <label for="pregunta" class="text-light">Pregunta: </label>
+                    <div class="d-inline-block"></div>
+                    <input type="text" class="form-control" id="pregunta" formControlName="pregunta" required>
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-warning pt-2 pb-3">
+                    <label for="opcion1" class="text-light">Opcion 1: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion1" value="opcion1">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion1" required>
+                    </div>    
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-danger pt-2 pb-3">
+                    <label for="opcion2" class="text-light">Opcion 2: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion2" value="opcion2">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion2" required>
+                    </div>  
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-success pt-2 pb-3">
+                    <label for="opcion3" class="text-light">Opcion 3: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion3" value="opcion3">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion3" required>
+                    </div>  
+                </div>
+                <div class="form-group col-md-12 redondear-bordes bg-primary pt-2 pb-3">
+                    <label for="opcion4" class="text-light">Opcion 4: </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="radio" name="respuesta" id="opcion4" value="opcion4">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control"  formControlName="opcion4" required>
+                    </div>  
+                </div>
+                <div class="col-sm-12" align="center">
+                    <button type="submit" class="btn btn-success btn-lg" *ngIf="ModoEditar">Guardar cambios</button>
+                </div>
+            </div>
+        </form>
+        <div class="col-md-4 pl-5">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="pl-3 pt-3 text-info">Añadir Pregunta:</h3>
+                </div>
+                <div class="col-sm-4">
+                    <button (click)="anadirPregunta()" class="btn text-success pt-2 fa-3x fas fa-plus-circle"></button>
+                </div>
+                <div class="col-sm-8">
+                    <h3 class="pl-3 pt-3 text-info">Guardar Examen:</h3>
+                </div>
+                <div class="col-sm-4">
+                    <button (click)="crearExamen()" class="btn text-warning pt-2 fa-3x fas fa-book-medical"></button>
+                </div>
+                <div  class="col-sm-12">
+                 <table class="table table-hover" align="center">
+                    <thead class="thead-dark">
+                        <th scope="col">Pregunta</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let pregunta of preguntas; let i=index">
+                        <th scope="row">{{pregunta.pregunta}}</th>
+                        <td><button (click)="editar(pregunta.idpregunta)"  class="btn text-info fas fa-edit"></button></td>
+                        <td><button (click)="borrarPregunta(pregunta.idpregunta)" class="btn text-danger fas fa-eraser"></button></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

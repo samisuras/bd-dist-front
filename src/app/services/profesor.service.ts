@@ -45,4 +45,10 @@ export class ProfesorService {
     let urlCrearExamen = this.url + '/crearExamen';
     return this.httpClient.post(urlCrearExamen,examen)
   }
+
+  public crearExamenConPreguntas(data){
+    //data contendra las preguntas y el id examen
+    let urlCrearExamConPreguntas = this.url + '/crearPreguntasExamen';
+    return this.httpClient.post(urlCrearExamConPreguntas,data)
+  }
 }

@@ -3,7 +3,8 @@ import { ProfesorService } from "../../../../../services/profesor.service";
 import { ActivatedRoute } from "@angular/router";
 import { Pregunta } from "./pregunta.interfaz";
 import { FormBuilder } from "@angular/forms";
-
+import { Router } from '@angular/router'
+ 
 @Component({
   selector: 'app-crear-preguntas',
   templateUrl: './crear-preguntas.component.html',
@@ -19,7 +20,10 @@ export class CrearPreguntasComponent implements OnInit {
   ModoEditar:boolean = false;
   indexG
 
-  constructor(private profesorService:ProfesorService,private activatedRoute:ActivatedRoute,private formBuilder:FormBuilder) {
+  constructor(
+    private profesorService:ProfesorService,private activatedRoute:ActivatedRoute,private formBuilder:FormBuilder,
+    private router:Router
+    ) {
     this.preguntaForm = formBuilder.group({
       pregunta: '',
       opcion1: '',
@@ -147,5 +151,17 @@ export class CrearPreguntasComponent implements OnInit {
 
   crearExamen(){
     //Enviar a profesor Service las preguntas
+    let json = {
+      preguntas: this.preguntas,
+      idexamen: this.idExamen
+    }
+    console.log(json)
+    this.profesorService.crearExamenConPreguntas(json).subscribe(
+      (res) => {
+        console.log(res)
+        this.router.navigate([''])
+      },
+      (err) => console.log(err)
+    )
   }
 }

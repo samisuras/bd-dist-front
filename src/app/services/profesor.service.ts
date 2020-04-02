@@ -56,4 +56,14 @@ export class ProfesorService {
     let urlGetExamenes = this.url + '/examenes/'+ data.idprofesor+'/'+data.idmateria+'/'+data.idgrupo
     return this.httpClient.get(urlGetExamenes)
   }
+
+  public getExamenesAlumnos(idExamen:any){
+    let newUrl = this.url + '/examenes_alumnos/' + idExamen
+    return this.httpClient.get(newUrl)
+  }
+
+  public actualizarNotas(json:any){
+    let newUrl = this.url +'/actualizarNotas'
+    return this.httpClient.put(newUrl,json)
+  }
 }

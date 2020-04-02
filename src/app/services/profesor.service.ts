@@ -51,4 +51,9 @@ export class ProfesorService {
     let urlCrearExamConPreguntas = this.url + '/crearPreguntasExamen';
     return this.httpClient.post(urlCrearExamConPreguntas,data)
   }
+
+  public getExamenes(data:any){
+    let urlGetExamenes = this.url + '/examenes/'+ data.idprofesor+'/'+data.idmateria+'/'+data.idgrupo
+    return this.httpClient.get(urlGetExamenes)
+  }
 }

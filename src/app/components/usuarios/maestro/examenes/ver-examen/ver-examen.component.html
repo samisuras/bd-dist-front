@@ -1,1 +1,48 @@
-<p>ver-examen works!</p>
+<div class="container mt-5">
+    <form class="mb-3" [formGroup]="buscarExamenForm" (ngSubmit)="onSubmit(buscarExamenForm.value)">
+        <div class="row">
+            <div class="form-group col-md-5">
+                <label>Materia </label>
+                <input list="materia" value="" class="col-sm-12 custom-select" formControlName="materia" (change)="obtenerIdMateria($event)" required>
+                <datalist id="materia" >
+                    <option *ngFor="let materia of materias" [value]="materia.nombre">
+                        {{materia.nombre}} 
+                    </option>
+                </datalist>
+            </div>
+            <div class="form-group col-md-5">
+                <label>Grupo </label>
+                <input list="grupo" value="" class="col-sm-12 custom-select" formControlName="grupo" required>
+                <datalist id="grupo">
+                    <option *ngFor="let grupo of grupos" [value]="grupo.nombre">
+                        {{grupo.nombre}} 
+                    </option>
+                </datalist>
+            </div>
+            <div class="col-md-2 pt-4" align="center">
+                <button type="submit" class="btn btn-success ">Buscar Practicas</button>
+            </div>
+        </div>
+    </form>
+    <table class="table table-hover" align="center">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha De Entrega</th>
+            <th scope="col">Hora De Entrega</th>
+            <th scope="col">Ver Practica</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let examen of examenes">
+            <th scope="row">{{examen.nombre}}</th>
+            <td>{{examen.fecha}}</td>
+            <td>{{examen.hora}}</td>
+            <td align="center">
+                <a class="btn fas fa-plus-circle text-warning fa-2x" [routerLink]="['/verExamenInidividual', examen.idexamen]"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    

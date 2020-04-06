@@ -2,7 +2,7 @@
     <div align="center">
         <h1>Crear Examen</h1>
     </div>
-    <form [formGroup]="examenForm" (ngSubmit)="onSubmit(examenForm.value)">
+    <form ngNativeValidate [formGroup]="examenForm" (ngSubmit)="onSubmit(examenForm.value)">
         <div class="row">
             <div class="form-group col-md-12">
                 <label for="nombre">Nombre del Examen</label>

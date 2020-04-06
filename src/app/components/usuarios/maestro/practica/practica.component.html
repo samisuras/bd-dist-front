@@ -2,7 +2,7 @@
     <div align="center">
         <h1>Subir una practica</h1>
     </div>
-    <form [formGroup]="practicaForm" (ngSubmit)="onSubmit(practicaForm.value)">
+    <form ngNativeValidate [formGroup]="practicaForm" (ngSubmit)="onSubmit(practicaForm.value)">
         <div class="row">
             <div class="form-group col-md-12">
                 <label for="nombre">Nombre de la practica</label>

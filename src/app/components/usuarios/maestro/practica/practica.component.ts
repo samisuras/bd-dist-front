@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ProfesorService } from "../../../../services/profesor.service";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder,FormGroup, Validators } from "@angular/forms";
 
 
 @Component({
@@ -29,7 +29,7 @@ export class PracticaComponent implements OnInit {
   materias:any;
   grupos:any;
   idmateria:string;
-  practicaForm;
+  practicaForm:FormGroup;
   fileToUpload: File = null;
 
   constructor(private profesorService:ProfesorService,private formBuilder:FormBuilder,private el:ElementRef) { 

@@ -3,7 +3,7 @@
         <h1>Examen: {{nombreExamen}}</h1>
     </div>
     <div class="row">
-        <form class="col-md-8" [formGroup]="preguntaForm" (ngSubmit)="onSubmit(preguntaForm.value)" *ngIf="!ModoEditar">
+        <form ngNativeValidate class="col-md-8" [formGroup]="preguntaForm" (ngSubmit)="onSubmit(preguntaForm.value)" *ngIf="!ModoEditar">
             <div class="row">
                 <div class="form-group col-md-12 redondear-bordes bg-dark pt-2 pb-3">
                     <label for="pregunta" class="text-light">Pregunta: </label>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </form>
-        <form class="col-md-8" [formGroup]="preguntaForm" (ngSubmit)="guardarCambios(preguntaForm.value)" *ngIf="ModoEditar">
+        <form ngNativeValidate class="col-md-8" [formGroup]="preguntaForm" (ngSubmit)="guardarCambios(preguntaForm.value)" *ngIf="ModoEditar">
             <div class="row">
                 <div class="form-group col-md-12 redondear-bordes bg-dark pt-2 pb-3">
                     <label for="pregunta" class="text-light">Pregunta: </label>

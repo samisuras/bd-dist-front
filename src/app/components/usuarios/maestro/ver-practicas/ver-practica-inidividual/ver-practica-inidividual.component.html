@@ -33,7 +33,7 @@
                     </div>
                     <div>
                         <!--Form para Calificacion y notas -->
-                        <form [formGroup]="calificarForm" (ngSubmit)="onSubmit(calificarForm,practica.nombre_alumno)">
+                        <form ngNativeValidate [formGroup]="calificarForm" (ngSubmit)="onSubmit(calificarForm,practica.nombre_alumno)">
                             <div class="form-group col-md-12">
                                 <label for="calificacion">Calificación: </label>
                                 <input type="number" min="0" max="10" value="{{practica.calificacion}}" class="form-control" id="calificacion" formControlName="calificacion" required>

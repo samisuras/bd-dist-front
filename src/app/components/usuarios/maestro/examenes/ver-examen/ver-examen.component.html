@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <form class="mb-3" [formGroup]="buscarExamenForm" (ngSubmit)="onSubmit(buscarExamenForm.value)">
+    <form ngNativeValidate class="mb-3" [formGroup]="buscarExamenForm" (ngSubmit)="onSubmit(buscarExamenForm.value)">
         <div class="row">
             <div class="form-group col-md-5">
                 <label>Materia </label>

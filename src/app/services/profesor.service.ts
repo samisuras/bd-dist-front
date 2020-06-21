@@ -11,12 +11,12 @@ export class ProfesorService {
   constructor(private httpClient:HttpClient) { }
 
   public getMaterias(id:string){
-    let urlMaterias = this.url + "/materias/" + id
+    let urlMaterias = this.url + "/materias/profesor/" + id + '/' + sessionStorage.getItem('sitio')
     return this.httpClient.get(urlMaterias)
   }
 
   public getGrupos(idusuario:string,idmateria:string){
-    let urlGrupos = this.url + '/grupos/' + idusuario + '/' + idmateria
+    let urlGrupos = this.url + '/grupos/' + idusuario + '/' + idmateria +'/' +sessionStorage.getItem('sitio')
     return this.httpClient.get(urlGrupos)
   }
 
@@ -27,7 +27,7 @@ export class ProfesorService {
   }
 
   public getPracticas(json){
-    let urlPracticas = this.url+'/practicas/'+json.idprofesor+'/'+json.idmateria+'/'+json.idgrupo
+    let urlPracticas = this.url+'/practicas/'+json.idprofesor+'/'+json.idmateria+'/'+json.idgrupo+'/'+sessionStorage.getItem('sitio')
     return this.httpClient.get(urlPracticas)
   }
 

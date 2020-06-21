@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         console.log(res)
         sessionStorage.setItem('id',res.usuario.idusuario);
         sessionStorage.setItem('rol',res.rol);
+        sessionStorage.setItem('sitio',res.sitio)
         //emitimos evento de logueo
         this.dataSharingService.isUserLoggedIn.next(true);
         this.router.navigate(['']);

@@ -40,6 +40,8 @@ export class CrearExamenComponent implements OnInit {
     formData.idmateria = this.idmateria;
     let grupo = this.grupos.find((grupo) =>  grupo.nombre == formData.grupo )
     formData.idgrupo = grupo.idgrupo;
+    //sitio
+    formData.sitio = sessionStorage.getItem('sitio')
     console.log(formData)
     this.profesorService.crearExamen(formData).subscribe(
       (res:any)=> {

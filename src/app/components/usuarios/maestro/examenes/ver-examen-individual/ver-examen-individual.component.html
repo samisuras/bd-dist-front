@@ -8,19 +8,21 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let examen of examenes; trackBy: trackByMethod">
-            <th scope="row" >{{examen.nombre_alumno}}</th>
-            <td >{{(examen.calificacion !== null) ? practica.calificacion : "No Revisado"}}</td>
-            <td>
-                <form [formGroup]="notasForm" (ngSubmit)="onSubmit(notasForm.value,examen.idalumno)">
-                    <div class="row">
-                        <input type="text" class="ml-3 form-control col-sm-7"  value="{{examen.notas}}"
-                                formControlName="notas">
-                        <button class="btn btn-info col-sm-3 ml-5" type="submit">Actualizar Nota</button>
-                    </div>
-                </form>
-            </td>
-        </tr>
+        <ng-container *ngIf="examenes">
+            <tr *ngFor="let examen of examenes; trackBy: trackByMethod">
+                <th scope="row" >{{examen.nombre_alumno}}</th>
+                <td >{{(examen.calificacion !== null) ? examen.calificacion : "No Revisado"}}</td>
+                <td>
+                    <form [formGroup]="notasForm" (ngSubmit)="onSubmit(notasForm.value,examen.idalumno)">
+                        <div class="row">
+                            <input type="text" class="ml-3 form-control col-sm-7"  value="{{examen.notas}}"
+                                    formControlName="notas">
+                            <button class="btn btn-info col-sm-3 ml-5" type="submit">Actualizar Nota</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </ng-container> 
         </tbody>
     </table>
 </div>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Ptor } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -32,13 +33,17 @@ export class ProfesorService {
   }
 
   public getPracticasAlumnos(idpractica){
-    let urlPracticasAlumnos = this.url + '/practicasDeAlumnos/'+idpractica;
+    let urlPracticasAlumnos = this.url + '/practicasDeAlumnos/'+idpractica+'/'+sessionStorage.getItem('sitio');
     return this.httpClient.get(urlPracticasAlumnos)
   }
 
   public calificarPractica(practica){
+    let data = {
+      practica: practica,
+      sitio: sessionStorage.getItem('sitio')
+    }
     let urlCalificar = this.url + '/calificarPractica';
-    return this.httpClient.post(urlCalificar,practica)
+    return this.httpClient.post(urlCalificar,data)
   }
 
   public crearExamen(examen){
@@ -53,12 +58,12 @@ export class ProfesorService {
   }
 
   public getExamenes(data:any){
-    let urlGetExamenes = this.url + '/examenes/'+ data.idprofesor+'/'+data.idmateria+'/'+data.idgrupo
+    let urlGetExamenes = this.url + '/examenes/'+ data.idprofesor+'/'+data.idmateria+'/'+data.idgrupo+'/'+sessionStorage.getItem('sitio')
     return this.httpClient.get(urlGetExamenes)
   }
 
   public getExamenesAlumnos(idExamen:any){
-    let newUrl = this.url + '/examenes_alumnos/' + idExamen
+    let newUrl = this.url + '/examenes_alumnos/' + idExamen+'/'+sessionStorage.getItem('sitio')
     return this.httpClient.get(newUrl)
   }
 

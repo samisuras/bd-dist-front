@@ -18,6 +18,7 @@ import { CrearExamenComponent } from './components/usuarios/maestro/examenes/cre
 import { VerExamenComponent } from './components/usuarios/maestro/examenes/ver-examen/ver-examen.component';
 import { CrearPreguntasComponent } from './components/usuarios/maestro/examenes/crear-preguntas/crear-preguntas.component';
 import { VerExamenIndividualComponent } from './components/usuarios/maestro/examenes/ver-examen-individual/ver-examen-individual.component';
+import { MaterialesComponent } from './components/usuarios/laboratorista/materiales/materiales.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { VerExamenIndividualComponent } from './components/usuarios/maestro/exam
     CrearExamenComponent,
     VerExamenComponent,
     CrearPreguntasComponent,
-    VerExamenIndividualComponent
+    VerExamenIndividualComponent,
+    MaterialesComponent
   ],
   imports: [
     BrowserModule,

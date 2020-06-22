@@ -9,6 +9,7 @@ import { CrearExamenComponent } from "./components/usuarios/maestro/examenes/cre
 import { VerExamenComponent } from "./components/usuarios/maestro/examenes/ver-examen/ver-examen.component";
 import { CrearPreguntasComponent } from "./components/usuarios/maestro/examenes/crear-preguntas/crear-preguntas.component";
 import { VerExamenIndividualComponent } from "./components/usuarios/maestro/examenes/ver-examen-individual/ver-examen-individual.component";
+import { MaterialesComponent } from "./components/usuarios/laboratorista/materiales/materiales.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'crearExamen', component: CrearExamenComponent },
   { path:'verExamen', component: VerExamenComponent},
   { path: 'crearPreguntas', component: CrearPreguntasComponent },
-  { path: 'verExamenInidividual/:id', component: VerExamenIndividualComponent }
+  { path: 'verExamenInidividual/:id', component: VerExamenIndividualComponent },
+  { path: 'verMateriales', component:MaterialesComponent}
 ];
 
 @NgModule({

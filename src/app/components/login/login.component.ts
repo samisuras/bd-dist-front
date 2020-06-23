@@ -12,7 +12,6 @@ import { Router } from "@angular/router";
 export class LoginComponent implements OnInit {
 
   signInForm;
-
   constructor(
     private formBuilder:FormBuilder, private loginService:LoginService,
     private dataSharingService:DataSharingService, private router:Router

@@ -43,6 +43,15 @@ export class ReportesComponent implements OnInit {
         this.laboratorios = res.laboratorios
         if(this.laboratorios.length == 0)
           alert('No hay prestamos en esta fecha')
+        else{
+          this.laboratorios.forEach(laboratorio => {
+            laboratorio.total = 0
+            laboratorio.prestamos.forEach(prestamo => {
+              if(prestamo !== undefined || prestamo.cantidad !== undefined)
+                laboratorio.total += Number.parseInt(prestamo.cantidad)
+            })
+          })
+        }
       },
       (err)=> {
         console.log(err);
@@ -60,6 +69,15 @@ export class ReportesComponent implements OnInit {
         this.laboratorios = res.laboratorios
         if(this.laboratorios.length == 0)
           alert('No hay prestamos en esta fecha')
+        else{
+          this.laboratorios.forEach(laboratorio => {
+            laboratorio.total = 0
+            laboratorio.prestamos.forEach(prestamo => {
+              if(prestamo !== undefined || prestamo.cantidad !== undefined)
+                laboratorio.total += Number.parseInt(prestamo.cantidad)
+            })
+          })
+        }
       },
       (err)=>{
         console.log(err);

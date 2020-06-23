@@ -1,0 +1,40 @@
+<div class="container text-center pt-5">
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card border-info mb-3" style="max-width: 20rem;">
+                <div class="card-header">ID Alumno: {{idalumno}}</div>
+                <div class="card-body">
+                  <h4 class="card-title">{{carrera}}</h4>
+                  <p class="card-text">Semestre y Grupo: {{semestre+"-"+grupo}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-xl-8">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID Materia</th>
+                        <th scope="col">Materias</th>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Ver Examenes</th>
+                        <th scope="col">Ver Practicas</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="materias">
+                    <tr *ngFor="let materia of materias">
+                        <th scope="row">{{ materia.idmateria }}</th>
+                        <th scope="row">{{ materia.materia }}</th>
+                        <th scope="row">{{ materia.nombre +" "+materia.apellido_p+" "+ materia.apellido_m }}</th>
+                        <td align="center">
+                            <a class="fas fas fa-eye text-info fa-2x" [routerLink]="['/verExamenesAlumno', materia.idmateria]"></a>
+                        </td>
+                        <td align="center">
+                            <a class="fas fas fa-eye text-info fa-2x" [routerLink]="['/verPracticasAlumno', materia.idmateria]"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

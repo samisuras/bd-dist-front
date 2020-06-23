@@ -1,0 +1,33 @@
+<div class="container text-center pt-5">
+    <h1>Exámenes</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id Examen</th>
+                <th scope="col">Id Profesor</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Calificacion</th>
+                <th scope="col">Notas</th>
+
+            </tr>
+        </thead>
+        <tbody *ngIf="examenes">
+            <tr *ngFor="let e of examenes">
+                <th scope="row">{{ e.idexamen }}</th>
+                <th scope="row">{{ e.idprofesor }}</th>
+                <th scope="row">{{ e.nombre }}</th>
+                <th scope="row">{{ e.fecha }}</th>
+                <th scope="row">{{ e.hora }}</th>
+                <th scope="row">{{ e.calificacion }}</th>
+                <th scope="row">{{ e.notas }}</th>
+            </tr>
+        </tbody>
+    </table>
+   
+    <a class="nav-link" routerLink="/verMaterias" routerLinkActive="active">
+        <i class="fas fa-undo-alt mr-2"></i> Regresar
+    </a>
+
+</div>

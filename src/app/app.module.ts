@@ -20,6 +20,9 @@ import { CrearPreguntasComponent } from './components/usuarios/maestro/examenes/
 import { VerExamenIndividualComponent } from './components/usuarios/maestro/examenes/ver-examen-individual/ver-examen-individual.component';
 import { MaterialesComponent } from './components/usuarios/laboratorista/materiales/materiales.component';
 import { ReportesComponent } from './components/usuarios/jefe_departamento/reportes/reportes.component';
+import { MateriasComponent } from './components/usuarios/estudiante/materias/materias.component';
+import { VerExamenesComponent } from './components/usuarios/estudiante/ver-examenes/ver-examenes.component';
+import { VerPracticaComponent } from './components/usuarios/estudiante/ver-practica/ver-practica.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ReportesComponent } from './components/usuarios/jefe_departamento/repor
     CrearPreguntasComponent,
     VerExamenIndividualComponent,
     MaterialesComponent,
-    ReportesComponent
+    ReportesComponent,
+    MateriasComponent,
+    VerExamenesComponent,
+    VerPracticaComponent
   ],
   imports: [
     BrowserModule,

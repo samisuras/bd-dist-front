@@ -1,0 +1,98 @@
+<span *ngIf="total > 0">
+<div class="container pt-5" *ngIf="calificacion == false">
+    <form class="row" (ngSubmit)="submit()">
+        <div class="col-xl-3">
+            <div class="card border-light mb-3" style="max-width: 20rem;">
+                <div class="card-header">Segundos Restantes: {{timeLeft}}</div>
+                <div class="card-header">Preguntas {{contestadas+" de "+total}}</div>
+                <span class="" *ngFor="let i of seleccionado">
+                    <span class="badge badge-info col-sm-12" *ngIf="completas == false">{{i}}</span>
+                    <span class="badge badge-success col-sm-12" *ngIf="completas == true">{{i}}</span>                
+                
+                </span>
+            </div>
+        </div>
+        <div class="col-xl-9">
+            <div class="jumbotron">
+                <h1 class="display-3">{{nombreExamen}}</h1>
+                <p class="lead">Contesta cada una de las preguntas y al finalizar presiona el boton "Terminar Examen".</p>
+                <hr class="my-4">
+                <div class="form-group row" *ngFor="let p of preguntas">
+                    <div class="col-sm-12">
+                        <input type="text" readonly="" class="form-control-plaintext" value="{{p.pregunta}}">
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" 
+                                    id="{{p.idpregunta}}" value="{{p.opcion1}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                {{p.opcion1}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" 
+                                    id="{{p.idpregunta}}" value="{{p.opcion2}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                {{p.opcion2}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" 
+                                    id="{{p.idpregunta}}" value="{{p.opcion3}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                {{p.opcion3}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" 
+                                    id="{{p.idpregunta}}" value="{{p.opcion4}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                {{p.opcion4}}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Terminar Examen</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<div class="container pt-5 text-center" *ngIf="calificacion == true">
+    <div class="row">
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Haz finalizado con el examen.</div>
+                <div class="card-body">
+                  <h4 class="card-title">{{nombreExamen}}</h4>
+                  <p class="card-text">Obtuviste una calificacion de: {{calFinal}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <a class="nav-link" routerLink="/verMaterias" routerLinkActive="active">
+                <i class="fas fa-undo-alt mr-2"></i> Regresar
+            </a>      
+        </div>
+
+    </div>
+
+</div>
+</span>
+
+<div class="container pt-5" *ngIf="total == 0">
+    <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>No hay examen registrado aun!</strong>
+    </div>
+    <a class="nav-link" routerLink="/verMaterias" routerLinkActive="active">
+        <i class="fas fa-undo-alt mr-2"></i> Regresar
+    </a>  
+</div>

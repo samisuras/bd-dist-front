@@ -22,6 +22,7 @@ import { MaterialesComponent } from './components/usuarios/laboratorista/materia
 import { MateriasComponent } from './components/usuarios/estudiante/materias/materias.component';
 import { VerExamenesComponent } from './components/usuarios/estudiante/ver-examenes/ver-examenes.component';
 import { VerPracticaComponent } from './components/usuarios/estudiante/ver-practica/ver-practica.component';
+import { RealizarExamenComponent } from './components/usuarios/estudiante/realizar-examen/realizar-examen.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { VerPracticaComponent } from './components/usuarios/estudiante/ver-pract
     MaterialesComponent,
     MateriasComponent,
     VerExamenesComponent,
-    VerPracticaComponent
+    VerPracticaComponent,
+    RealizarExamenComponent
   ],
   imports: [
     BrowserModule,

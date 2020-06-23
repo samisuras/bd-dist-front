@@ -13,6 +13,9 @@ import { MaterialesComponent } from "./components/usuarios/laboratorista/materia
 import { MateriasComponent } from "./components/usuarios/estudiante/materias/materias.component"
 import { VerExamenesComponent } from "./components/usuarios/estudiante/ver-examenes/ver-examenes.component"
 import { VerPracticaComponent } from "./components/usuarios/estudiante/ver-practica/ver-practica.component"
+import { RealizarExamenComponent } from "./components/usuarios/estudiante/realizar-examen/realizar-examen.component"
+
+
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -26,7 +29,8 @@ const routes: Routes = [
   { path: 'verMateriales', component:MaterialesComponent},
   { path: 'verMaterias', component: MateriasComponent},
   { path: 'verExamenesAlumno/:id', component: VerExamenesComponent},
-  { path: 'verPracticasAlumno/:id', component: VerPracticaComponent}
+  { path: 'verPracticasAlumno/:id', component: VerPracticaComponent},
+  { path: 'realizarExamen/:id', component: RealizarExamenComponent}
 
 ];
 

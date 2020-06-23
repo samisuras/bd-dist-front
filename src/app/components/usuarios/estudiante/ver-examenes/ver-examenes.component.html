@@ -1,6 +1,6 @@
 <div class="container text-center pt-5">
     <h1>Exámenes</h1>
-    <table class="table table-striped">
+    <table class="table table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Id Examen</th>
@@ -10,6 +10,7 @@
                 <th scope="col">Hora</th>
                 <th scope="col">Calificacion</th>
                 <th scope="col">Notas</th>
+                <th scope="col"></th>
 
             </tr>
         </thead>
@@ -22,6 +23,10 @@
                 <th scope="row">{{ e.hora }}</th>
                 <th scope="row">{{ e.calificacion }}</th>
                 <th scope="row">{{ e.notas }}</th>
+                <td align="center" *ngIf="e.calificacion == null">
+                    <a class="text-info"  [routerLink]="['/realizarExamen', e.idexamen]">Realizar Examen</a>
+                </td>
+                <th scope="row" *ngIf="e.calificacion != null">calificado</th>
             </tr>
         </tbody>
     </table>

@@ -26,4 +26,15 @@ export class EstudianteService {
     return this.httpClient.get(urlPracticas)
   }
 
+  public getPreguntasExamen(id:string , examen:string){
+    let urlPreguntas = this.url + '/preguntasExamen/estudiante/' + id + '/' + sessionStorage.getItem('sitio') + '/' + examen
+    return this.httpClient.get(urlPreguntas)
+  }
+
+  public setCalificacionExamen(datos){
+    let urlCalificacion = this.url + '/calificacionExamen/estudiante'
+    return this.httpClient.post(urlCalificacion,datos)
+
+  }
+
 }

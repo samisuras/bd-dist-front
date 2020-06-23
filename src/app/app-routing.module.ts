@@ -10,6 +10,7 @@ import { VerExamenComponent } from "./components/usuarios/maestro/examenes/ver-e
 import { CrearPreguntasComponent } from "./components/usuarios/maestro/examenes/crear-preguntas/crear-preguntas.component";
 import { VerExamenIndividualComponent } from "./components/usuarios/maestro/examenes/ver-examen-individual/ver-examen-individual.component";
 import { MaterialesComponent } from "./components/usuarios/laboratorista/materiales/materiales.component";
+import { ReportesComponent } from "./components/usuarios/jefe_departamento/reportes/reportes.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path:'verExamen', component: VerExamenComponent},
   { path: 'crearPreguntas', component: CrearPreguntasComponent },
   { path: 'verExamenInidividual/:id', component: VerExamenIndividualComponent },
-  { path: 'verMateriales', component:MaterialesComponent}
+  { path: 'verMateriales', component:MaterialesComponent},
+  { path: 'jefe_departamento/reportes', component: ReportesComponent }
 ];
 
 @NgModule({

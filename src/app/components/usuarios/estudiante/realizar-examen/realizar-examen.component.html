@@ -17,7 +17,7 @@
                 <h1 class="display-3">{{nombreExamen}}</h1>
                 <p class="lead">Contesta cada una de las preguntas y al finalizar presiona el boton "Terminar Examen".</p>
                 <hr class="my-4">
-                <div class="form-group row" *ngFor="let p of preguntas">
+                <div class="form-group row" *ngFor="let p of preguntas; let i = index">
                     <div class="col-sm-12">
                         <input type="text" readonly="" class="form-control-plaintext" value="{{p.pregunta}}">
                     </div>
@@ -25,28 +25,28 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="radio" class="form-check-input" 
-                                    id="{{p.idpregunta}}" value="{{p.opcion1}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                    id="{{i}}" value="{{p.opcion1}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
                                 {{p.opcion1}}
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="radio" class="form-check-input" 
-                                    id="{{p.idpregunta}}" value="{{p.opcion2}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                    id="{{i}}" value="{{p.opcion2}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
                                 {{p.opcion2}}
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="radio" class="form-check-input" 
-                                    id="{{p.idpregunta}}" value="{{p.opcion3}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                    id="{{i}}" value="{{p.opcion3}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
                                 {{p.opcion3}}
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="radio" class="form-check-input" 
-                                    id="{{p.idpregunta}}" value="{{p.opcion4}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
+                                    id="{{i}}" value="{{p.opcion4}}" name="{{p.idpregunta}}" (change)="radioChange($event)">
                                 {{p.opcion4}}
                             </label>
                         </div>

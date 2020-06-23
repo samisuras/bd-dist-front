@@ -22,7 +22,6 @@ export class RealizarExamenComponent implements OnInit {
   calFinal = 0
   idexamen
   tiempo
-
   timeLeft: number = 0;
   interval;
   constructor(
@@ -32,7 +31,7 @@ export class RealizarExamenComponent implements OnInit {
 
 
   radioChange(event: any) {
-    this.seleccionado[event.target.id - 1] = event.target.value;
+    this.seleccionado[event.target.id] = event.target.value;
     console.log(this.seleccionado)
     this.contestadas = this.verificarContestadas()
 
@@ -61,6 +60,7 @@ export class RealizarExamenComponent implements OnInit {
           if (res.preguntas.length > 0) {
             this.idexamen = res.idexamen
             this.preguntas = res.preguntas
+            console.log(this.preguntas)
             this.total = this.preguntas.length
             this.nombreExamen = res.preguntas[0].nombre
             this.seleccionado = []

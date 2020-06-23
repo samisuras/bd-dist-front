@@ -1,0 +1,111 @@
+<div class="container">
+    <h1>Reportes de uso de laboratorios</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row pt-5 pb-3" align="center" >
+                <div class="col-sm-6">
+                    <button (click)="diaFunction()" class="btn btn-lg btn-warning">Dia</button>
+                </div>
+                <div class="col-sm-6">
+                    <button (click)="periodoFunction()" class="btn btn-lg btn-warning">Periodo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="dia">
+        <div class="col-sm-12">
+            <form method="get">
+                <fieldset>
+                    <div class="form-group col-md-12">
+                        <label for="dia"><span class="text-danger">*</span>Selecione una fecha:</label>
+                        <input type="date" (change)="buscaDia($event.srcElement.value)" class="form-control" id="dia">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="row" *ngIf="periodo">
+        <div class="col-sm-12">
+            <form method="get" [formGroup]="periodoForm" (ngSubmit)="submit(periodoForm.value)" ngNativeValidate>
+                <fieldset>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="dia1"><span class="text-danger">*</span>Selecione la primera fecha:</label>
+                            <input type="date" class="form-control" id="dia1" formControlName="dia1" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="dia2"><span class="text-danger">*</span>Selecione la segunda fecha:</label>
+                            <input type="date" class="form-control" id="dia2" formControlName="dia2" required>
+                        </div>
+                        <div class="col-sm-12">
+                            <button class="btn btn-success">Buscar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <ng-container *ngIf="laboratorios">
+        <ng-container *ngFor="let laboratorio of laboratorios">
+            <div class="mt-3">
+                <h1>Laboratorio: {{laboratorio.nombre}}</h1>
+                <h5>Total de productos prestados: {{laboratorio.total}} </h5>
+            </div>
+            <table class="table table-hover mt-3" align="center">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id prestamo</th>
+                    <th scope="col">Fecha Prestado</th>
+                    <th scope="col">Fecha Devuelto</th>
+                    <th scope="col">Nombre del Producto</th>
+                    <th scope="col">Cantidad prestada</th>
+                    <th scope="col">Existencia</th>
+                </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let prestamo of laboratorio.prestamos">
+                        <th scope="row">{{prestamo.idprestamo}}</th>
+                        <td>{{prestamo.fecha}}</td>
+                        <td>{{prestamo.fecha_devuelto}}</td>
+                        <td>{{prestamo.nombre}}</td>
+                        <td>{{prestamo.cantidad}}</td>
+                        <td>{{prestamo.existencia}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+    
+    <!--<table class="table table-hover mt-5" align="center">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nombre de laboratorio</th>
+            <th scope="col">Total de prestamos</th>
+            <th scope="col">Detalles</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="laboratorios">
+            <tr *ngFor="let laboratorio of laboratorios">
+                <th scope="row">{{laboratorio.nombre}}</th>
+                <td>{{laboratorio.total}}</td>
+                <td>
+                    <tr *ngFor="let prestamo of laboratorio.prestamos">
+                        <th scope="row">{{prestamo.idprestamo}}</th>
+                        <td>{{prestamo.fecha}}</td>
+                        <td>{{prestamo.nombre}}</td>
+                        <td>
+                            <button class="btn btn-outline btn-primary">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </td>
+                <td>
+                    <button class="btn btn-outline btn-primary">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+</div>

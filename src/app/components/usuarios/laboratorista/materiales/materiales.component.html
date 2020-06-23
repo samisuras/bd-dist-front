@@ -1,1 +1,30 @@
-<p>materiales works!</p>
+<div class="container buscador">
+    <form>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nombre del material" (keyup)="buscarMateriales($event)">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary btn-block" type="button" (click)="busqueda()">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Material</th>
+                <th scope="col">Cantidad Disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let material of copia">
+                <th scope="row">{{searchIndex(material)}}</th>
+                <td>{{material.nombre}}</td>
+                <td>{{material.existencia}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -6,6 +6,103 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngSwitch]="rol">
+        <ul class="navbar-nav ml-auto" *ngSwitchCase="'estudiante'">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">
+            Cosas de estudiante
+          </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngSwitchCase="'profesor'">
+            <li class="nav-item active pr-4">
+                <a class="nav-link " routerLink="/crearExamen" routerLinkActive="active">
+              Crear Examen
+            </a>
+            </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link " routerLink="/verExamen" routerLinkActive="active">
+              Ver Examenes
+            </a>
+            </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link " routerLink="/crearPracticas" routerLinkActive="active">
+              Subir práctica
+            </a>
+            </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link " routerLink="/verPracticas" routerLinkActive="active">
+              Ver prácticas
+            </a>
+            </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link " routerLink="/cerrar" routerLinkActive="active">
+              Cerrar Sesión
+            </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngSwitchCase="'laboratorista'">
+            <li class="nav-item active pr-4">
+                <a class="nav-link" routerLink="/verMateriales" routerLinkActive="active">
+                  Materiales
+                </a>
+            </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">
+                  Préstamos
+                </a>
+            </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">
+                Cerrar Sesión
+              </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngSwitchCase="'profesor'">
+          <li class="nav-item active pr-4">
+              <a class="nav-link " routerLink="/crearExamen" routerLinkActive="active">
+            Crear Examen
+          </a>
+          </li>
+          <li class="nav-item active pr-4">
+              <a class="nav-link " routerLink="/verExamen" routerLinkActive="active">
+            Ver Examenes
+          </a>
+          </li>
+          <li class="nav-item active pr-4">
+              <a class="nav-link " routerLink="/crearPracticas" routerLinkActive="active">
+            Subir práctica
+          </a>
+          </li>
+          <li class="nav-item active pr-4">
+              <a class="nav-link " routerLink="/verPracticas" routerLinkActive="active">
+            Ver prácticas
+          </a>
+          </li>
+          <li class="nav-item active pr-4">
+              <a class="nav-link " routerLink="/cerrar" routerLinkActive="active">
+            Cerrar Sesión
+          </a>
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngSwitchCase="'jefe_departamento'">
+          <li class="nav-item active pr-4">
+              <a class="nav-link" routerLink="/jefe_departamento/reportes" routerLinkActive="active">
+                Reportes
+              </a>
+          </li>
+          <li class="nav-item active pr-4">
+              <a class="nav-link" routerLink="/" routerLinkActive="active">
+              Cerrar Sesión
+            </a>
+          </li>
+      </ul>
+        <ul *ngSwitchDefault class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
+            </li>
+        </ul>
+    </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngSwitch]="rol">
     <ul class="navbar-nav ml-auto" *ngSwitchCase="'estudiante'">
       <li class="nav-item active">

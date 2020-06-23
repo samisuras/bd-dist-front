@@ -153,15 +153,19 @@ export class CrearPreguntasComponent implements OnInit {
     //Enviar a profesor Service las preguntas
     let json = {
       preguntas: this.preguntas,
-      idexamen: this.idExamen
+      idexamen: this.idExamen,
+      sitio: sessionStorage.getItem('sitio')
     }
     console.log(json)
     this.profesorService.crearExamenConPreguntas(json).subscribe(
       (res) => {
         console.log(res)
-        this.router.navigate([''])
+        
       },
-      (err) => console.log(err)
+      (err) =>{
+         console.log(err)
+         this.router.navigate([''])
+      }
     )
   }
 }

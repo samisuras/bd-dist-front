@@ -42,7 +42,8 @@ export class VerExamenIndividualComponent implements OnInit {
     let json = {
       nota: formData.notas,
       idalumno: idalumno,
-      idexamen: this.idExamen
+      idexamen: this.idExamen,
+      sitio: sessionStorage.getItem('sitio')
     }
     this.profesorService.actualizarNotas(json).subscribe(
       (res) => console.log(res),

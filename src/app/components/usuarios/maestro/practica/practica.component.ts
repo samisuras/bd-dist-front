@@ -90,6 +90,8 @@ export class PracticaComponent implements OnInit {
         formData.idmateria = materia.idmateria
         let grupo = this.grupos.find((grupo)=> formData.grupo == grupo.nombre);
         formData.idgrupo = grupo.idgrupo
+        //sitio
+        formData.sitio = sessionStorage.getItem('sitio')
         let stringJSON:string = JSON.stringify(formData);
         jsonData.append('form',stringJSON)
         this.profesorService.crearPractica(jsonData).subscribe(

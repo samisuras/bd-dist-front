@@ -12,10 +12,11 @@
                 <th scope="col">Notas</th>
                 <th scope="col"></th>
 
+
             </tr>
         </thead>
         <tbody *ngIf="examenes">
-            <tr *ngFor="let e of examenes">
+            <tr *ngFor="let e of examenes; let i = index">
                 <th scope="row">{{ e.idexamen }}</th>
                 <th scope="row">{{ e.idprofesor }}</th>
                 <th scope="row">{{ e.nombre }}</th>
@@ -24,13 +25,13 @@
                 <th scope="row">{{ e.calificacion }}</th>
                 <th scope="row">{{ e.notas }}</th>
                 <td align="center" *ngIf="e.calificacion == null">
-                    <a class="text-info"  [routerLink]="['/realizarExamen', e.idexamen]">Realizar Examen</a>
+                    <a class="text-info" [routerLink]="['/realizarExamen', e.idexamen]">Realizar Examen</a>
                 </td>
                 <th scope="row" *ngIf="e.calificacion != null">calificado</th>
             </tr>
         </tbody>
     </table>
-   
+
     <a class="nav-link" routerLink="/verMaterias" routerLinkActive="active">
         <i class="fas fa-undo-alt mr-2"></i> Regresar
     </a>

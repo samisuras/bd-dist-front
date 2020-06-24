@@ -1,0 +1,68 @@
+<div class="container">
+    <h1>Préstamos pendientes</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID Alumno</th>
+                <th scope="col">Fecha de inicio</th>
+                <th scope="col">Opciones</th>
+                <th scope="col">Materiales</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let prestamo of pendientes">
+                <td>
+                    {{prestamo.alumno_idalumno}}
+                    <div></div>
+                </td>
+                <td>{{prestamo.fecha}}</td>
+                <td>
+                    <div class="row espacio">
+                        <button class="btn btn-primary btn-block" type="button" (click)="cambiarMateriales(prestamo.idprestamo)">{{getMensajeBoton(prestamo.idprestamo)}}</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block" type="button">Finalizar prestamo</button>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="mostrarMateriales.get(prestamo.idprestamo)">
+                        {{materiales.get(prestamo.idprestamo)}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h1>Préstamos finalizados</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID Alumno</th>
+                <th scope="col">Fecha de inicio</th>
+                <th scope="col">Fecha de fin</th>
+                <th scope="col">Opciones</th>
+                <th scope="col">Materiales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prestamo of terminados">
+                <td>{{prestamo.alumno_idalumno}}</td>
+                <td>{{prestamo.fecha}}</td>
+                <td>{{prestamo.fecha_devuelto}}</td>
+                <td>
+                    <div class="row">
+                        <button class="btn btn-primary btn-block" type="button" (click)="cambiarMateriales(prestamo.idprestamo)">{{getMensajeBoton(prestamo.idprestamo)}}</button>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="mostrarMateriales.get(prestamo.idprestamo)">
+                        {{materiales.get(prestamo.idprestamo)}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

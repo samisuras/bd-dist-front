@@ -16,6 +16,7 @@ import { MateriasComponent } from "./components/usuarios/estudiante/materias/mat
 import { VerExamenesComponent } from "./components/usuarios/estudiante/ver-examenes/ver-examenes.component"
 import { VerPracticaComponent } from "./components/usuarios/estudiante/ver-practica/ver-practica.component"
 import { RealizarExamenComponent } from "./components/usuarios/estudiante/realizar-examen/realizar-examen.component"
+import { PrestamosComponent } from "./components/usuarios/laboratorista/prestamos/prestamos.component";
 
 
 const routes: Routes = [
@@ -33,8 +34,8 @@ const routes: Routes = [
   { path: 'verMaterias', component: MateriasComponent},
   { path: 'verExamenesAlumno/:id', component: VerExamenesComponent},
   { path: 'verPracticasAlumno/:id', component: VerPracticaComponent},
-  { path: 'realizarExamen/:id', component: RealizarExamenComponent}
-
+  { path: 'realizarExamen/:id', component: RealizarExamenComponent},
+  { path: 'verPrestamos', component: PrestamosComponent}
 ];
 
 @NgModule({

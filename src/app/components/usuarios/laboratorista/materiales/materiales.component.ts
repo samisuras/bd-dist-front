@@ -10,14 +10,22 @@ export class MaterialesComponent implements OnInit {
   nombre:string=''
   original:Array<any>
   copia:Array<any>
+  prestados:Map<any,any>
 
   constructor(private laboratoristaService:LaboratoristaService) { }
 
   ngOnInit() {
     this.laboratoristaService.getMateriales().subscribe(
       (res:any)=>{
+        this.prestados=new Map()
         this.original = res.materiales
         this.copia=res.materiales
+        for (let index = 0; index < this.original.length; index++) {
+          this.prestados.set(this.original[index].idproducto,0)
+        }
+        for (let index = 0; index < res.prestados.length; index++) {
+          this.prestados.set(res.prestados[index].idproducto,res.prestados[index].prestados)
+        }
         console.log(this.original)
         console.log(this.copia)
       },

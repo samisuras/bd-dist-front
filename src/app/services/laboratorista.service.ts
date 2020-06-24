@@ -11,7 +11,15 @@ export class LaboratoristaService{
     constructor(private httpClient:HttpClient){}
 
     public getMateriales(){
-        let urlMateriales=this.url+"materiales/"+sessionStorage.getItem("sitio")
-        return this.httpClient.get(urlMateriales)
+      let urlMateriales=this.url+"materiales/"+sessionStorage.getItem("sitio")
+      return this.httpClient.get(urlMateriales)
+    }
+
+    public getPrestamos(){
+      return this.httpClient.get(this.url+"prestamos/"+sessionStorage.getItem("sitio"))
+    }
+
+    public getMaterialesPrestamo(idprestamo:string){
+      return this.httpClient.get(this.url+"prestamo/"+idprestamo+"/materiales/"+sessionStorage.getItem("sitio"))
     }
 }

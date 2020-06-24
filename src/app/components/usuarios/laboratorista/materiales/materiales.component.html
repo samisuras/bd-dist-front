@@ -16,7 +16,9 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Material</th>
-                <th scope="col">Cantidad Disponible</th>
+                <th scope="col">Disponibles</th>
+                <th scope="col">Prestados</th>
+                <th scope="col">Total</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +26,8 @@
                 <th scope="row">{{searchIndex(material)}}</th>
                 <td>{{material.nombre}}</td>
                 <td>{{material.existencia}}</td>
+                <td>{{prestados.get(material.idproducto)}}</td>
+                <td>{{prestados.get(material.idproducto) + material.existencia}}</td>
             </tr>
         </tbody>
     </table>

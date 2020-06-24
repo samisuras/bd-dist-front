@@ -24,6 +24,7 @@ import { MateriasComponent } from './components/usuarios/estudiante/materias/mat
 import { VerExamenesComponent } from './components/usuarios/estudiante/ver-examenes/ver-examenes.component';
 import { VerPracticaComponent } from './components/usuarios/estudiante/ver-practica/ver-practica.component';
 import { RealizarExamenComponent } from './components/usuarios/estudiante/realizar-examen/realizar-examen.component';
+import { PrestamosComponent } from './components/usuarios/laboratorista/prestamos/prestamos.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { RealizarExamenComponent } from './components/usuarios/estudiante/realiz
     MateriasComponent,
     VerExamenesComponent,
     VerPracticaComponent,
-    RealizarExamenComponent
+    RealizarExamenComponent,
+    PrestamosComponent
   ],
   imports: [
     BrowserModule,

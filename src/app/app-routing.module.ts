@@ -17,7 +17,7 @@ import { VerExamenesComponent } from "./components/usuarios/estudiante/ver-exame
 import { VerPracticaComponent } from "./components/usuarios/estudiante/ver-practica/ver-practica.component"
 import { RealizarExamenComponent } from "./components/usuarios/estudiante/realizar-examen/realizar-examen.component"
 import { PrestamosComponent } from "./components/usuarios/laboratorista/prestamos/prestamos.component";
-
+import { SubirPracticaComponent } from "./components/usuarios/estudiante/subir-practica/subir-practica.component"
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -35,7 +35,9 @@ const routes: Routes = [
   { path: 'verExamenesAlumno/:id', component: VerExamenesComponent},
   { path: 'verPracticasAlumno/:id', component: VerPracticaComponent},
   { path: 'realizarExamen/:id', component: RealizarExamenComponent},
-  { path: 'verPrestamos', component: PrestamosComponent}
+  { path: 'verPrestamos', component: PrestamosComponent},
+  { path: 'subirPractica', component: VerPracticaComponent},
+  { path: 'subirPractica/:idP/:idA', component: SubirPracticaComponent},
 ];
 
 @NgModule({

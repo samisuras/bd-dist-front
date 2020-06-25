@@ -37,4 +37,10 @@ export class EstudianteService {
 
   }
 
+  public subirPractica(datos){
+    let urlsubir = this.url + '/subirPractica/estudiante'
+    return this.httpClient.post(urlsubir,datos)
+  } 
+
+
 }

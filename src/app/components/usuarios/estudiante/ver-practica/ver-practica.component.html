@@ -6,15 +6,17 @@
                 <th scope="col">Id Practica</th>
                 <th scope="col">Id Profesor</th>
                 <th scope="col">Titulo</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Hora</th>
+                <th scope="col">Fecha Limite</th>
+                <th scope="col">Hora Limite</th>
                 <th scope="col">Calificacion</th>
                 <th scope="col">Notas</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
 
             </tr>
         </thead>
         <tbody *ngIf="practicas">
-            <tr *ngFor="let e of practicas">
+            <tr *ngFor="let e of practicas; let i = index">
                 <th scope="row">{{ e.idpractica }}</th>
                 <th scope="row">{{ e.idprofesor }}</th>
                 <th scope="row">{{ e.nombre }}</th>
@@ -22,6 +24,11 @@
                 <th scope="row">{{ e.hora }}</th>
                 <th scope="row">{{ e.calificacion }}</th>
                 <th scope="row">{{ e.notas }}</th>
+                <th scope="row">-</th>
+                <td align="center" >
+                    <a class="text-info" [routerLink]="['/subirPractica', e.idpractica, e.idalumno]">Subir Practica</a>
+                </td>
+
             </tr>
         </tbody>
     </table>

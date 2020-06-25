@@ -71,4 +71,9 @@ export class ProfesorService {
     let newUrl = this.url +'/actualizarNotas'
     return this.httpClient.put(newUrl,json)
   }
+
+  public getArchivoPractica(idusuario,idpractica,archivo){
+    let newUrl = this.url +'/practicas/archivo/obtener/'+idusuario+'/'+idpractica+'/'+archivo
+    return this.httpClient.get(newUrl, {responseType: "blob"})
+  }
 }

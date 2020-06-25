@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ProfesorService } from "../../../../../services/profesor.service";
 import { FormBuilder } from "@angular/forms";
-
+import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-ver-practica-inidividual',
   templateUrl: './ver-practica-inidividual.component.html',
@@ -61,6 +61,21 @@ export class VerPracticaInidividualComponent implements OnInit {
       },
       (err) =>{
         console.log(err)
+      }
+    )
+  }
+
+  descargarPractica(idpractica){
+    const usuario = this.practicas.find(practica => practica.idpractica == idpractica)
+    
+    this.profesorService
+    .getArchivoPractica(usuario.idusuario,usuario.idpractica,usuario.archivo)
+    .subscribe(
+      (res:any)=>{
+        console.log(res);
+        saveAs(res,usuario.archivo)
+      },(err)=>{
+        console.log(err);
       }
     )
   }

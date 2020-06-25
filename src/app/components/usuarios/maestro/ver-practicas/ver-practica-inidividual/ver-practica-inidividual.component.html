@@ -6,6 +6,7 @@
             <th scope="col">Calificacion</th>
             <th scope="col">Notas</th>
             <th scope="col">Archivo de Practica</th>
+            <th scope="col">Descargar Practica</th>
             <th scope="col">Calificar</th>
         </tr>
         </thead>
@@ -14,7 +15,14 @@
             <th scope="row">{{practica.nombre_alumno}}</th>
             <td>{{(practica.calificacion !== null) ? practica.calificacion : "No Revisado"}}</td>
             <td>{{(practica.notas !== null) ? practica.notas : "Sin notas"}}</td>
-            <td>{{(practica.archivo !== null) ? practica.archivo : "Sin Archivo"}}</td>
+            <td>
+                {{(practica.archivo !== null) ? practica.archivo : "Sin Archivo"}}
+            </td>
+            <td *ngIf="practica.archivo !== null">
+                <button (click)="descargarPractica(practica.idpractica)" class="btn btn-primary">
+                    Descargar
+                </button>
+            </td>
             <td>
                 <button 
                     class="btn pl-3 text-success fa-2x fas fa-clipboard-check"

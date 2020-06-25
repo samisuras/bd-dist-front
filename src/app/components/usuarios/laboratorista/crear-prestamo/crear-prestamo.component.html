@@ -1,0 +1,26 @@
+<div class="container bg-dark text-light mt-5 pt-3 pb-3">
+    <div align="center">
+        <h1>Crear Préstamo</h1>
+    </div>
+    <form ngNativeValidate [formGroup]="prestamoForm" (ngSubmit)="onSubmit(prestamoForm.value)">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="nombre">Alumno</label>
+                <select class="form-control" id="nombre" formControlName="alumno_idalumno" required>
+                    <option *ngFor="let alumno of alumnos" [value]="alumno.idalumno">
+                        {{alumno.idalumno}}: {{alumno.apellido_p+" "+alumno.apellido_m+" "+alumno.nombre}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col-md-12" *ngFor="let material of materiales">
+                <div *ngIf="material.existencia-prestados.get(material.idproducto)>0">
+                    <label [for]=material.idproducto>{{material.nombre}}</label>
+                    <input type="number" class="form-control" [id]="material.idproducto" min="1" [max]="material.existencia-prestados.get(material.idproducto)" (change)="actualizarCantidad($event, material.idproducto)">
+                </div>
+            </div>
+            <div class="col-sm-12" align="center">
+                <button type="submit" class="btn btn-primary btn-lg">Crear Préstamo</button>
+            </div>
+        </div>
+    </form>
+</div>

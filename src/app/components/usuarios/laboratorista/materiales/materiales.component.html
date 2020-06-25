@@ -25,9 +25,9 @@
             <tr *ngFor="let material of copia">
                 <th scope="row">{{searchIndex(material)}}</th>
                 <td>{{material.nombre}}</td>
-                <td>{{material.existencia}}</td>
+                <td>{{material.existencia-prestados.get(material.idproducto)}}</td>
                 <td>{{prestados.get(material.idproducto)}}</td>
-                <td>{{prestados.get(material.idproducto) + material.existencia}}</td>
+                <td>{{material.existencia}}</td>
             </tr>
         </tbody>
     </table>

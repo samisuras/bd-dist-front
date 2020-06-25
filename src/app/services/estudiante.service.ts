@@ -42,5 +42,17 @@ export class EstudianteService {
     return this.httpClient.post(urlsubir,datos)
   } 
 
+  public bajarPractica(datos){
+    
+    let urlsubir = this.url + '/bajarPractica/estudiante/'+ datos.idprofesor + '/'+ datos.idpractica + '/'+datos.archivo
+    return this.httpClient.get(urlsubir,{responseType: "blob"})
+  } 
+
+  public getFileName (practica,profesor,materia,grupo){
+    let urlname = this.url + '/getFileName/estudiante/'+ practica + '/' + profesor + '/' + materia + '/' + grupo + '/' + sessionStorage.getItem('sitio')
+    return this.httpClient.get(urlname)
+
+  }
+
 
 }

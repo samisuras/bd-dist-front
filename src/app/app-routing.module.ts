@@ -20,6 +20,7 @@ import { PrestamosComponent } from "./components/usuarios/laboratorista/prestamo
 import { SubirPracticaComponent } from "./components/usuarios/estudiante/subir-practica/subir-practica.component"
 import { CrearPrestamoComponent } from "./components/usuarios/laboratorista/crear-prestamo/crear-prestamo.component";
 
+import {BajarpracticaComponent} from "./components/usuarios/estudiante/bajarpractica/bajarpractica.component"
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: 'verPrestamos', component: PrestamosComponent},
   { path: 'subirPractica', component: VerPracticaComponent},
   { path: 'subirPractica/:idP/:idA', component: SubirPracticaComponent},
-  { path: 'crearPrestamo', component:CrearPrestamoComponent}
+  { path: 'crearPrestamo', component:CrearPrestamoComponent},
+  { path: 'bajarPractica/:idPra/:idPro/:idG/:idM', component:BajarpracticaComponent}
 ];
 
 @NgModule({

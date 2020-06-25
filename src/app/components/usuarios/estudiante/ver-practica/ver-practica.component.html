@@ -24,7 +24,9 @@
                 <th scope="row">{{ e.hora }}</th>
                 <th scope="row">{{ e.calificacion }}</th>
                 <th scope="row">{{ e.notas }}</th>
-                <th scope="row">-</th>
+                <td align="center" >
+                    <a class="text-info" [routerLink]="['/bajarPractica', e.idpractica, e.idprofesor, e.idgrupo, e.idmateria]">Bajar Practica</a>
+                </td>
                 <td align="center" >
                     <a class="text-info" [routerLink]="['/subirPractica', e.idpractica, e.idalumno]">Subir Practica</a>
                 </td>

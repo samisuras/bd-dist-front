@@ -18,8 +18,8 @@
             <td>
                 {{(practica.archivo !== null) ? practica.archivo : "Sin Archivo"}}
             </td>
-            <td *ngIf="practica.archivo !== null">
-                <button (click)="descargarPractica(practica.idpractica)" class="btn btn-primary">
+            <td>
+                <button *ngIf="practica.archivo !== null" (click)="descargarPractica(practica.idpractica)" class="btn btn-primary">
                     Descargar
                 </button>
             </td>

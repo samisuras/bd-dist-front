@@ -25,7 +25,11 @@ import { VerExamenesComponent } from './components/usuarios/estudiante/ver-exame
 import { VerPracticaComponent } from './components/usuarios/estudiante/ver-practica/ver-practica.component';
 import { RealizarExamenComponent } from './components/usuarios/estudiante/realizar-examen/realizar-examen.component';
 import { PrestamosComponent } from './components/usuarios/laboratorista/prestamos/prestamos.component';
+<<<<<<< HEAD
 import { SubirPracticaComponent } from './components/usuarios/estudiante/subir-practica/subir-practica.component';
+=======
+import { CrearPrestamoComponent } from './components/usuarios/laboratorista/crear-prestamo/crear-prestamo.component';
+>>>>>>> 2bd52b2d81349bc6a0a68755a897a738d657e29f
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { SubirPracticaComponent } from './components/usuarios/estudiante/subir-p
     VerPracticaComponent,
     RealizarExamenComponent,
     PrestamosComponent,
+<<<<<<< HEAD
     SubirPracticaComponent
+=======
+    CrearPrestamoComponent
+>>>>>>> 2bd52b2d81349bc6a0a68755a897a738d657e29f
   ],
   imports: [
     BrowserModule,

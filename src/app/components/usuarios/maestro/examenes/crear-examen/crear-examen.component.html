@@ -19,7 +19,7 @@
             <div class="form-group col-md-6">
                 <label>Materia </label>
                 <input list="materia" value="" class="col-sm-12 custom-select" formControlName="materia" (change)="obtenerIdMateria($event)" required>
-                <datalist id="materia" >
+                <datalist id="materia">
                     <option *ngFor="let materia of materias" [value]="materia.nombre">
                         {{materia.nombre}} 
                     </option>
@@ -38,5 +38,5 @@
                 <button type="submit" class="btn btn-primary btn-lg">Crear Examen</button>
             </div>
         </div>
-      </form>
+    </form>
 </div>

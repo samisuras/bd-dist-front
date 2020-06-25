@@ -51,7 +51,7 @@ import { CrearPrestamoComponent } from './components/usuarios/laboratorista/crea
     VerPracticaComponent,
     RealizarExamenComponent,
     PrestamosComponent,
-    SubirPracticaComponent
+    SubirPracticaComponent,
     CrearPrestamoComponent
   ],
   imports: [

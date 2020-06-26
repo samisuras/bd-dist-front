@@ -22,10 +22,8 @@ export class NavbarComponent implements OnInit {
   }
 
   cerrarSesion(){
-    this.router.navigate(['/'])
     sessionStorage.clear()
-    location.reload()
-    this.router.navigate(['/'])
+    this.router.navigate(['login'])
   }
 
 }

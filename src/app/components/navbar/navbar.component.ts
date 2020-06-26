@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSharingService } from "../../services/data-sharing.service";
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   rol: string;
 
-  constructor(private dataSharingService:DataSharingService) { 
+  constructor(private dataSharingService:DataSharingService, private router:Router) { 
     //escuchamos los cambios
     this.dataSharingService.isUserLoggedIn.subscribe( value => {
       this.rol = sessionStorage.getItem("rol");
@@ -20,8 +22,10 @@ export class NavbarComponent implements OnInit {
   }
 
   cerrarSesion(){
+    this.router.navigate(['/'])
     sessionStorage.clear()
     location.reload()
+    this.router.navigate(['/'])
   }
 
 }

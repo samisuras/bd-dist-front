@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSharingService } from "../../services/data-sharing.service";
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -18,6 +17,11 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  cerrarSesion(){
+    sessionStorage.clear()
+    location.reload()
   }
 
 }

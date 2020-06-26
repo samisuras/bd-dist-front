@@ -8,62 +8,62 @@
         <ul class="navbar-nav ml-auto" *ngSwitchCase="'estudiante'">
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/verMaterias" routerLinkActive="active">
-          Materias
-        </a>
+                    Materias
+                </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/" routerLinkActive="active">
-          Cerrar Sesión
-        </a>
+                <a class="nav-link" (click)="cerrarSesion()" routerLink="/" routerLinkActive="active">
+                    Cerrar Sesión
+                </a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto" *ngSwitchCase="'profesor'">
             <li class="nav-item active pr-4">
                 <a class="nav-link " routerLink="/crearExamen" routerLinkActive="active">
-          Crear Exámen
-        </a>
+                    Crear Exámen
+                </a>
             </li>
             <li class="nav-item active pr-4">
                 <a class="nav-link " routerLink="/verExamen" routerLinkActive="active">
-          Ver Exámenes
-        </a>
+                    Ver Exámenes
+                </a>
             </li>
             <li class="nav-item active pr-4">
                 <a class="nav-link " routerLink="/crearPracticas" routerLinkActive="active">
-          Subir Práctica
-        </a>
+                    Subir Práctica
+                </a>
             </li>
             <li class="nav-item active pr-4">
                 <a class="nav-link " routerLink="/verPracticas" routerLinkActive="active">
-          Ver Prácticas
-        </a>
+                    Ver Prácticas
+                </a>
             </li>
             <li class="nav-item active pr-4">
-                <a class="nav-link " routerLink="/cerrar" routerLinkActive="active">
-          Cerrar Sesión
-        </a>
+                <a class="nav-link " (click)="cerrarSesion()" routerLink="/cerrar" routerLinkActive="active">
+                    Cerrar Sesión
+                </a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto" *ngSwitchCase="'laboratorista'">
             <li class="nav-item active pr-4">
                 <a class="nav-link" routerLink="/verMateriales" routerLinkActive="active">
-          Materiales
-        </a>
+                    Materiales
+                </a>
             </li>
             <li class="nav-item active pr-4">
                 <a class="nav-link" routerLink="/verPrestamos" routerLinkActive="active">
-          Préstamos
-        </a>
+                    Préstamos
+                </a>
             </li>
             <li class="nav-item active pr-4">
                 <a class="nav-link" routerLink="/crearPrestamo" routerLinkActive="active">
-          Préstamo nuevo
-        </a>
+                    Préstamo nuevo
+                </a>
             </li>
             <li class="nav-item active pr-4">
-                <a class="nav-link" routerLink="/" routerLinkActive="active">
-          Cerrar Sesión
-        </a>
+                <a class="nav-link" (click)="cerrarSesion()" routerLink="/" routerLinkActive="active">
+                    Cerrar Sesión
+                </a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto" *ngSwitchCase="'jefe_departamento'">
@@ -71,7 +71,7 @@
                 <a class="nav-link" routerLink="/jefe_departamento/reportes" routerLinkActive="active">
                     Ver reportes
                 </a>
-                <a class="nav-link" routerLink="/" routerLinkActive="active">
+                <a class="nav-link" (click)="cerrarSesion()" routerLink="/" routerLinkActive="active">
                     Cerrar Sesión
                 </a>
             </li>
